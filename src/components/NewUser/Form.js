@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Button from "../UI/Button";
 
 export default function Form(props) {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -19,9 +20,8 @@ export default function Form(props) {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    props.onAddUser(enteredUserData);
   };
-
-  props.onAddUser(enteredUserData);
 
   return (
     <div className="container rounded mt-5 p-5 pt-4 pb-4 col-5 bg-light ">
@@ -48,10 +48,7 @@ export default function Form(props) {
             onChange={ageChangeHandler}
           />
         </div>
-
-        <button type="submit" className="btn btn-primary">
-          Add User
-        </button>
+        <Button textContent="Add User" />
       </form>
     </div>
   );

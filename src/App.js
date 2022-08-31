@@ -1,5 +1,5 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import List from "./components/List/List";
 import NewUser from "./components/NewUser/NewUser";
 
@@ -15,10 +15,17 @@ const usersArray = [
 ];
 
 function App() {
+  const [userArray, setUserArray] = useState(usersArray);
+
+  const addUserHandler = (enteredUserData) => {
+    setUserArray((prevData) => {
+      return [enteredUserData, ...prevData];
+    });
+  };
   return (
     <div>
-      <NewUser />
-      <List usersArray={usersArray} />
+      <NewUser onAddUser={addUserHandler} />
+      <List usersArray={userArray} />
     </div>
   );
 }
