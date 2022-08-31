@@ -1,16 +1,31 @@
 import React from "react";
+import { useState } from "react";
 
 export default function Form(props) {
+  const [enteredUsername, setEnteredUsername] = useState("");
+  const [enteredAge, setEnteredAge] = useState("");
+
   const usernameChangeHandler = (event) => {
-    console.log(event.target.value);
+    setEnteredUsername(event.target.value);
   };
   const ageChangeHandler = (event) => {
-    console.log(event.target.value);
+    setEnteredAge(event.target.value);
   };
+
+  const enteredUserData = {
+    username: enteredUsername,
+    age: enteredAge,
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
+
+  props.onAddUser(enteredUserData);
 
   return (
     <div className="container rounded mt-5 p-5 pt-4 pb-4 col-5 bg-light ">
-      <form>
+      <form onSubmit={submitHandler}>
         <div className="mb-3">
           <label htmlFor="exampleInputUsername" className="form-label">
             Username

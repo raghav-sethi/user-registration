@@ -1,7 +1,7 @@
 import React from "react";
 // import { useState } from "react";
-import Form from "./components/Form/Form";
 import List from "./components/List/List";
+import NewUser from "./components/NewUser/NewUser";
 
 const usersArray = [
   {
@@ -17,12 +17,8 @@ const usersArray = [
 function App() {
   return (
     <div>
-      <Form />
-      <div className="container rounded mt-5 p-5 pt-4 pb-4 col-5 bg-light ">
-        {usersArray.map((user) => (
-          <List username={user.username} age={user.age} />
-        ))}
-      </div>
+      <NewUser />
+      <List usersArray={usersArray} />
     </div>
   );
 }
