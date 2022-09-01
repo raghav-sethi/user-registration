@@ -7,7 +7,9 @@ export default function Modal(props) {
     props.onOkayClick(false);
   };
   return (
-    <div className="container rounded mt-5 p-5 pt-4 pb-4 col-5 bg-light ">
+    <div
+      className={`container rounded mt-5 p-5 pt-4 pb-4 col-5 bg-light ${styles.modal}`}
+    >
       <div className={` ${styles.indigoDiv}`}>
         <h2>{props.errorHeading}</h2>
       </div>

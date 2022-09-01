@@ -1,3 +1,12 @@
 /* .indigoDiv {
   background-color: #a66cff;
 } */
+.modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 41.7vw;
+  z-index: 1;
+}
